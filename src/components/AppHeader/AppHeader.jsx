@@ -1,13 +1,17 @@
-import React from 'react'
-import { Wrapper } from './AppHeader.styles'
+import React from 'react';
+import { Wrapper } from './AppHeader.styles';
+import { useSelector } from 'react-redux';
 
-function AppHeader () {
-  return <Wrapper>
-    alga
-    <span>
-      Shopping
-    </span>
-  </Wrapper>
+function AppHeader() {
+  const result = useSelector((state) => state.calculator);
+
+  return (
+    <Wrapper>
+      alga
+      <span>Shopping</span>
+      <span>{result}</span>
+    </Wrapper>
+  );
 }
 
-export default AppHeader
+export default AppHeader;
